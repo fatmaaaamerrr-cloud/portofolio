@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fatma Amer | Data Analyst Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --white: #FFFFFF;
+            --off-white: #F8FBFD;
+            --baby-blue: #B8D4E8;
+            --soft-blue: #7BA3C9;
+            --deep-blue: #3A6B8C;
+            --navy: #1E3A4C;
+            --gray: #6B7C8A;
+            --light-gray: #E8F0F5;
+            --accent: #5B9BD5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: var(--off-white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--light-gray);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--deep-blue);
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--deep-blue);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            background: linear-gradient(160deg, var(--white) 0%, var(--baby-blue) 45%, var(--soft-blue) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.7);
+            color: var(--deep-blue);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255,255,255,0.8);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.8rem, 6vw, 4.2rem);
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            color: var(--deep-blue);
+        }
+
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--navy);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            max-width: 600px;
+        }
+
+        .hero-usp {
+            font-size: 1.15rem;
+            color: var(--navy);
+            max-width: 620px;
+            margin-bottom: 2.5rem;
+            background: rgba(255,255,255,0.55);
+            padding: 1.25rem 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--deep-blue);
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: var(--navy);
+            color: white;
+            box-shadow: 0 4px 14px rgba(30, 58, 76, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--deep-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 76, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.85);
+            color: var(--navy);
+            border: 1.5px solid var(--soft-blue);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            border-color: var(--deep-blue);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--soft-blue);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-desc {
+            color: var(--gray);
+            max-width: 560px;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-size: 1.05rem;
+        }
+
+        .about-highlight {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            border: 1px solid var(--light-gray);
+            box-shadow: 0 4px 20px rgba(58, 107, 140, 0.06);
+        }
+
+        .about-highlight h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--deep-blue);
+        }
+
+        .about-highlight ul {
+            list-style: none;
+        }
+
+        .about-highlight li {
+            padding: 0.5rem 0;
+            color: var(--gray);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+        }
+
+        .about-highlight li::before {
+            content: '▸';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 14px;
+            padding: 1.75rem;
+            border: 1px solid var(--light-gray);
+            transition: all 0.25s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(58, 107, 140, 0.1);
+            border-color: var(--baby-blue);
+        }
+
+        .skill-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--baby-blue), var(--soft-blue));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+        }
+
+        .skill-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: var(--light-gray);
+            color: var(--deep-blue);
+            padding: 0.25rem 0.7rem;
+            border-radius: 50px;
+            font-size: 0.78rem;
+            font-weight: 500;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--light-gray);
+            display: grid;
+            grid-template-columns: 8px 1fr;
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 16px 40px rgba(58, 107, 140, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .project-accent {
+            background: linear-gradient(180deg, var(--soft-blue), var(--deep-blue));
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .project-type {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--soft-blue);
+        }
+
+        .project-card h3 {
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
+        }
+
+        .project-card p {
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            font-size: 0.98rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-highlights li {
+            color: var(--gray);
+            font-size: 0.92rem;
+            padding: 0.3rem 0;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .project-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--deep-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            padding: 0.45rem 1rem;
+            border-radius: 6px;
+            background: var(--light-gray);
+            transition: all 0.2s;
+        }
+
+        .project-link:hover {
+            background: var(--baby-blue);
+            color: var(--navy);
+        }
+
+        /* Experience */
+        .exp-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid var(--light-gray);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .exp-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--soft-blue), var(--deep-blue));
+        }
+
+        .exp-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .exp-header h3 {
+            font-size: 1.25rem;
+            color: var(--navy);
+        }
+
+        .exp-org {
+            color: var(--deep-blue);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .exp-date {
+            background: var(--light-gray);
+            color: var(--gray);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .exp-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .exp-points {
+            list-style: none;
+        }
+
+        .exp-points li {
+            color: var(--gray);
+            padding: 0.4rem 0;
+            padding-left: 1.3rem;
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .exp-points li::before {
+            content: '●';
+            position: absolute;
+            left: 0;
+            color: var(--soft-blue);
+            font-size: 0.6rem;
+            top: 0.7rem;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(160deg, var(--navy) 0%, var(--deep-blue) 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-section .section-label {
+            color: var(--baby-blue);
+        }
+
+        .contact-section .section-title {
+            color: white;
+        }
+
+        .contact-section .section-desc {
+            color: rgba(255,255,255,0.75);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.95rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s;
+            font-size: 0.95rem;
+        }
+
+        .contact-btn.primary {
+            background: white;
+            color: var(--navy);
+        }
+
+        .contact-btn.primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .contact-btn.secondary {
+            background: rgba(255,255,255,0.12);
+            color: white;
+            border: 1.5px solid rgba(255,255,255,0.3);
+        }
+
+        .contact-btn.secondary:hover {
+            background: rgba(255,255,255,0.2);
+            border-color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 1.5rem 2rem;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--baby-blue);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+            }
+
+            section {
+                padding: 3.5rem 1.5rem;
+            }
+
+            .project-card {
+                grid-template-columns: 6px 1fr;
+            }
+
+            .project-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Fatma Amer</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Data Analyst · Time Series Forecasting · Alexandria, Egypt</div>
+            <h1>Hi, I'm <span>Fatma Amer</span></h1>
+            <p class="hero-subtitle">I help startups and e-commerce brands turn messy sales data into clear, actionable insights — and I forecast what’s coming next.</p>
+            <div class="hero-usp">
+                From cleaning chaotic spreadsheets to building ARIMA/SARIMA forecasting models and interactive dashboards, I deliver answers business owners can actually use to make faster, more confident decisions.
+            </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Projects</a>
+                <a href="https://www.linkedin.com/in/fatma-amer-35b442413" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                <a href="https://github.com/fatmaaaamerrr-cloud" target="_blank" class="btn btn-secondary">GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+        <div class="container">
+            <div class="section-label">About Me</div>
+            <h2 class="section-title">I don’t just analyze the past — I help you see what’s next</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I’m a Data Analyst with intensive training through the Digital Egypt Pioneers Initiative (DEPI) — over 600 hours of hands-on work in Python, SQL, Power BI, Tableau, and advanced Time Series Analysis.
+                    </p>
+                    <p>
+                        Most analysts stop at “what happened.” I go further: I clean messy sales data, uncover the real drivers of profit, and build forecasting models (ARIMA & SARIMA) so startups and e-commerce brands can anticipate demand, inventory needs, and revenue trends instead of reacting late.
+                    </p>
+                    <p>
+                        My goal is simple — deliver insights and forecasts that a non-technical founder can open, understand in minutes, and act on with confidence.
+                    </p>
+                </div>
+                <div class="about-highlight">
+                    <h3>What makes my work different</h3>
+                    <ul>
+                        <li>Full pipeline: messy data → clean insights → forecasts</li>
+                        <li>Specialized in Time Series (ARIMA, SARIMA, forecasting)</li>
+                        <li>Python + SQL for deep cleaning & statistical modeling</li>
+                        <li>Power BI & Tableau dashboards that non-technical teams actually use</li>
+                        <li>Business language, not technical jargon</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" style="background: white;">
+        <div class="container">
+            <div class="section-label">Skills & Tools</div>
+            <h2 class="section-title">The toolkit behind the insights</h2>
+            <p class="section-desc">Hands-on skills from intensive DEPI training and real projects — with a strong focus on Time Series Analysis and forecasting.</p>
+            
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">📈</div>
+                    <h3>Time Series Analysis & Forecasting</h3>
+                    <p>Specialized training in Time Series: stationarity tests, seasonal decomposition, ARIMA & SARIMA modeling, residual diagnostics, and out-of-sample forecasting.</p>
+                    <div class="skill-tags">
+                        <span class="tag">ARIMA</span>
+                        <span class="tag">SARIMA</span>
+                        <span class="tag">Forecasting</span>
+                        <span class="tag">ADF / KPSS</span>
+                        <span class="tag">Seasonal Decomposition</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python for Data Analysis</h3>
+                    <p>Full pipeline: cleaning, feature engineering, EDA, statistical analysis, and visualization using Pandas, NumPy, Matplotlib & Seaborn.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Pandas</span>
+                        <span class="tag">NumPy</span>
+                        <span class="tag">Matplotlib</span>
+                        <span class="tag">Seaborn</span>
+                        <span class="tag">Statsmodels</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3>Business Intelligence</h3>
+                    <p>Interactive dashboards and visual reports that help non-technical stakeholders make faster decisions.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Power BI</span>
+                        <span class="tag">Tableau</span>
+                        <span class="tag">DAX</span>
+                        <span class="tag">Excel</span>
+                    </div>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">🗄️</div>
+                    <h3>SQL & Machine Learning</h3>
+                    <p>Querying and transforming data + introductory ML (classification & regression) for predictive insights.</p>
+                    <div class="skill-tags">
+                        <span class="tag">SQL</span>
+                        <span class="tag">Scikit-learn</span>
+                        <span class="tag">Regression</span>
+                        <span class="tag">Classification</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-label">Selected Work</div>
+            <h2 class="section-title">Projects that turn data into decisions</h2>
+            <p class="section-desc">Real analysis work focused on sales, profitability, and predictive insights — the kind of problems startups and e-commerce teams face daily.</p>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-accent"></div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-type">Sales & Profitability Analysis</span>
+                        </div>
+                        <h3>Superstore Sales & Profitability Analysis</h3>
+                        <p>
+                            End-to-end Python analysis of retail sales data. Cleaned messy transactional data, engineered new features (profit margin, shipping duration), performed correlation and trend analysis, and created clear visualizations to highlight performance drivers.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Full data cleaning & preprocessing pipeline</li>
+                            <li>Feature engineering for better business metrics</li>
+                            <li>KPI reporting + correlation analysis</li>
+                            <li>Visual storytelling of regional & category performance</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/fatmaaaamerrr-cloud/Superstore-Data-Analysis-Python" target="_blank" class="project-link">
+                                View on GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-accent"></div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-type">Time Series Analysis & Forecasting</span>
+                        </div>
+                        <h3>Australian Beer Production – Full Time Series Project</h3>
+                        <p>
+                            Complete end-to-end Time Series Analysis training project: from data cleaning and exploratory analysis to ARIMA/SARIMA modeling, residual diagnostics, and 24-month out-of-sample forecasting with MAPE ≈ 6%.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Stationarity tests (ADF & KPSS)</li>
+                            <li>Seasonal decomposition (additive vs multiplicative)</li>
+                            <li>SARIMA modeling with grid search + model comparison</li>
+                            <li>Residual diagnostics (Ljung-Box, ACF/PACF, Q-Q plot)</li>
+                            <li>24-month forecasting & evaluation</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/fatmaaaamerrr-cloud/Python-Tasks" target="_blank" class="project-link">
+                                View on GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card">
+                    <div class="project-accent"></div>
+                    <div class="project-body">
+                        <div class="project-meta">
+                            <span class="project-type">Machine Learning</span>
+                        </div>
+                        <h3>FIFA Player Value Prediction & Performance Classification</h3>
+                        <p>
+                            University group project applying machine learning to predict player market value and classify performance levels using FIFA dataset — combining regression and classification approaches.
+                        </p>
+                        <ul class="project-highlights">
+                            <li>Feature selection & preprocessing for sports data</li>
+                            <li>Regression models for value prediction</li>
+                            <li>Classification for performance tiers</li>
+                            <li>Model evaluation & insight extraction</li>
+                        </ul>
+                        <div class="project-links">
+                            <a href="https://github.com/fatmaaaamerrr-cloud/FIFA-Player-Value-Prediction-Performance-Classification" target="_blank" class="project-link">
+                                View on GitHub →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" style="background: white;">
+        <div class="container">
+            <div class="section-label">Background</div>
+            <h2 class="section-title">Training & Foundation</h2>
+            
+            <div class="exp-card">
+                <div class="exp-header">
+                    <div>
+                        <h3>Data Analytics Track + Time Series Training</h3>
+                        <div class="exp-org">Digital Egypt Pioneers Initiative (DEPI) — MCIT</div>
+                    </div>
+                    <span class="exp-date">Intensive Program · 600+ Hours</span>
+                </div>
+                <p>
+                    Intensive hands-on training covering the full data analytics workflow — from data cleaning and SQL to Python analysis, Power BI, Tableau, and specialized Time Series Analysis (ARIMA, SARIMA, forecasting).
+                </p>
+                <ul class="exp-points">
+                    <li>Advanced Time Series: stationarity tests, seasonal decomposition, ARIMA/SARIMA modeling & forecasting</li>
+                    <li>End-to-end projects focused on sales, profitability, and demand forecasting</li>
+                    <li>Tools: Python, SQL, Power BI, Tableau, Statsmodels, Excel</li>
+                    <li>Emphasis on turning technical work into clear, usable insights for non-technical stakeholders</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+                <div class="skill-card" style="flex: 1; min-width: 200px;">
+                    <h3 style="font-size: 1rem;">Certifications</h3>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">IBM Data Fundamentals · AWS Cloud Fundamentals · Database Fundamentals (MaharaTech)</p>
+                </div>
+                <div class="skill-card" style="flex: 1; min-width: 200px;">
+                    <h3 style="font-size: 1rem;">Location</h3>
+                    <p style="margin-top: 0.5rem; font-size: 0.9rem;">Alexandria, Egypt · Open to remote opportunities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Strong CTA -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-label">Next Step</div>
+            <h2 class="section-title">Let’s turn your messy data into clear decisions</h2>
+            <p class="section-desc">
+                Whether you need a full sales analysis, a forecasting model, or a clean dashboard your team can actually use — I’m ready to help.
+            </p>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/fatma-amer-35b442413" target="_blank" class="contact-btn primary">
+                    Message Me on LinkedIn
+                </a>
+                <a href="https://github.com/fatmaaaamerrr-cloud" target="_blank" class="contact-btn secondary">
+                    See All Projects on GitHub
+                </a>
+            </div>
+            <p style="margin-top: 2.5rem; font-size: 0.95rem; color: rgba(255,255,255,0.7);">
+                Open to freelance projects, internships, and junior Data Analyst roles · Remote or hybrid
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Fatma Amer · Data Analyst · Time Series & Business Insights</p>
+        <p style="margin-top: 0.5rem;">
+            <a href="https://www.linkedin.com/in/fatma-amer-35b442413" target="_blank">LinkedIn</a> · 
+            <a href="https://github.com/fatmaaaamerrr-cloud" target="_blank">GitHub</a>
+        </p>
+    </footer>
+</body>
+</html>
